@@ -74,7 +74,7 @@ spec:
                 echo $? > partner-tasks-code.out
                 cat partner-tasks.out
             - name: create-comment
-              image: registry.access.redhat.com/ubi9/python-39:9.7-1776644933@sha256:ee2a11266ec90665de33302f74d913d556cf2dc67d68208cada62de15a6859b9
+              image: registry.access.redhat.com/ubi9/python-39:9.8-1783600452@sha256:089d74899673657f24e2f5ebd843322ff344065ab711a932be40d4d3fb83a88d
               volumeMounts:
                 - name: infra-deployments-pr-creator
                   mountPath: /secrets/deploy-key
@@ -221,7 +221,7 @@ spec:
         taskSpec:
           steps:
             - name: check-task-migration-md
-              image: registry.redhat.io/openshift4/ose-tools-rhel8:v4.12@sha256:c24dbe19be6cd9b2a8ab9a76f50607b123b75fcf8a3aeeed45ac91a7bde107a0
+              image: registry.redhat.io/openshift4/ose-tools-rhel8:v4.12@sha256:46c48640eb794d79bcae0c46d3ad3ce909c6fe938f89453daabea380942b276c
               workingDir: $(workspaces.source.path)/source
               script: |
                 #!/usr/bin/env bash
