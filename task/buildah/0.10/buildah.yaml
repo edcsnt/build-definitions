@@ -320,7 +320,7 @@ spec:
       value: $(params.ALLOW_CROSS_PLATFORM_IMAGES)
     imagePullPolicy: IfNotPresent
   steps:
-  - image: quay.io/konflux-ci/konflux-build-cli:latest@sha256:0415613f955ef8f7c6fc821a6738dcf062d9a3582441042b87a2391c375d7f54
+  - image: quay.io/konflux-ci/konflux-build-cli:latest@sha256:fddbb4c2edb01a3f0065321f84cf2e4d8e483b4149e3d6f78dd0c46e85e35aef
     name: build
     computeResources:
       limits:
@@ -569,7 +569,7 @@ spec:
     workingDir: $(workspaces.source.path)
 
   - name: push
-    image: quay.io/konflux-ci/konflux-build-cli:latest@sha256:0415613f955ef8f7c6fc821a6738dcf062d9a3582441042b87a2391c375d7f54
+    image: quay.io/konflux-ci/konflux-build-cli:latest@sha256:fddbb4c2edb01a3f0065321f84cf2e4d8e483b4149e3d6f78dd0c46e85e35aef
     computeResources:
       limits:
         memory: 4Gi
@@ -758,7 +758,7 @@ spec:
     workingDir: $(workspaces.source.path)
 
   - name: sbom-syft-generate
-    image: quay.io/konflux-ci/task-runner:2.0.0@sha256:4b01fbf98fa7155f5c21443c285f88853864ae7cc66981cf6b543fc6ba16b81b
+    image: quay.io/konflux-ci/task-runner:2.1.0@sha256:c34c933c269e2401bb042fe69e2999cf288331b6586d4f4eca9c845270d9b1f9
     computeResources:
       limits:
         memory: 4Gi
@@ -925,7 +925,7 @@ spec:
       runAsUser: 0
 
   - name: upload-sbom
-    image: quay.io/konflux-ci/task-runner:2.0.0@sha256:4b01fbf98fa7155f5c21443c285f88853864ae7cc66981cf6b543fc6ba16b81b
+    image: quay.io/konflux-ci/task-runner:2.1.0@sha256:c34c933c269e2401bb042fe69e2999cf288331b6586d4f4eca9c845270d9b1f9
     computeResources:
       limits:
         memory: 256Mi

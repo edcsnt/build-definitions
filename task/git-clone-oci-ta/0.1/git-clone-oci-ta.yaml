@@ -423,7 +423,7 @@ spec:
           cpu: 50m
           memory: 64Mi
     - name: create-trusted-artifact
-      image: quay.io/konflux-ci/build-trusted-artifacts:latest@sha256:7c51a3530f239323442e28ea7dace8b88a14638d823d5eaa8514843c33b03c02
+      image: quay.io/konflux-ci/build-trusted-artifacts:latest@sha256:d352c2294e3ef37972686162098b5eb4507bcc92d84bec75ee2429fddbc77b8d
       args:
         - create
         - --store

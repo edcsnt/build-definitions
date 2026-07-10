@@ -347,7 +347,7 @@ spec:
     - name: YUM_REPOS_D_TARGET
       value: $(params.YUM_REPOS_D_TARGET)
     - name: BUILDER_IMAGE
-      value: quay.io/konflux-ci/konflux-build-cli:latest@sha256:0415613f955ef8f7c6fc821a6738dcf062d9a3582441042b87a2391c375d7f54
+      value: quay.io/konflux-ci/konflux-build-cli:latest@sha256:fddbb4c2edb01a3f0065321f84cf2e4d8e483b4149e3d6f78dd0c46e85e35aef
     - name: PLATFORM
       value: $(params.PLATFORM)
     - name: IMAGE_APPEND_PLATFORM
@@ -364,7 +364,7 @@ spec:
     - $(params.SOURCE_ARTIFACT)=/var/workdir/source
     - $(params.CACHI2_ARTIFACT)=/var/workdir/cachi2
     computeResources: {}
-    image: quay.io/konflux-ci/build-trusted-artifacts:latest@sha256:7c51a3530f239323442e28ea7dace8b88a14638d823d5eaa8514843c33b03c02
+    image: quay.io/konflux-ci/build-trusted-artifacts:latest@sha256:d352c2294e3ef37972686162098b5eb4507bcc92d84bec75ee2429fddbc77b8d
     name: use-trusted-artifact
     volumeMounts:
     - mountPath: /etc/pki/tls/certs/ca-custom-bundle.crt
@@ -408,7 +408,7 @@ spec:
       value: $(params.SOURCE_DATE_EPOCH)
     - name: BUILDAH_REWRITE_TIMESTAMP
       value: $(params.REWRITE_TIMESTAMP)
-    image: quay.io/konflux-ci/konflux-build-cli:latest@sha256:0415613f955ef8f7c6fc821a6738dcf062d9a3582441042b87a2391c375d7f54
+    image: quay.io/konflux-ci/konflux-build-cli:latest@sha256:fddbb4c2edb01a3f0065321f84cf2e4d8e483b4149e3d6f78dd0c46e85e35aef
     name: build
     script: |-
       #!/bin/bash
@@ -794,7 +794,7 @@ spec:
       value: $(params.BUILDAH_FORMAT)
     - name: TASKRUN_NAME
       value: $(context.taskRun.name)
-    image: quay.io/konflux-ci/konflux-build-cli:latest@sha256:0415613f955ef8f7c6fc821a6738dcf062d9a3582441042b87a2391c375d7f54
+    image: quay.io/konflux-ci/konflux-build-cli:latest@sha256:fddbb4c2edb01a3f0065321f84cf2e4d8e483b4149e3d6f78dd0c46e85e35aef
     name: push
     script: |
       #!/bin/bash
@@ -973,7 +973,7 @@ spec:
       requests:
         cpu: 1100m
         memory: 4Gi
-    image: quay.io/konflux-ci/task-runner:2.0.0@sha256:4b01fbf98fa7155f5c21443c285f88853864ae7cc66981cf6b543fc6ba16b81b
+    image: quay.io/konflux-ci/task-runner:2.1.0@sha256:c34c933c269e2401bb042fe69e2999cf288331b6586d4f4eca9c845270d9b1f9
     name: sbom-syft-generate
     script: |
       #!/bin/bash
@@ -1148,7 +1148,7 @@ spec:
       requests:
         cpu: 100m
         memory: 256Mi
-    image: quay.io/konflux-ci/task-runner:2.0.0@sha256:4b01fbf98fa7155f5c21443c285f88853864ae7cc66981cf6b543fc6ba16b81b
+    image: quay.io/konflux-ci/task-runner:2.1.0@sha256:c34c933c269e2401bb042fe69e2999cf288331b6586d4f4eca9c845270d9b1f9
     name: upload-sbom
     script: |
       #!/bin/bash
